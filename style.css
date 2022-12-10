@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+.menu {
+  text-decoration: none;
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+.menu a {
+  text-decoration: none;
+  background-color: #ffd036;
+  padding: 8px;
+  margin-top: 7px;
+  display: block;
+  width: 100%;
+  color: black;
+}
+
+.main {
+  text-decoration: none;
+  float: left;
+  width: 60%;
+  padding: 0 20px;
+}
+
+.right {
+  text-decoration: none;
+  background-color: #7e7e7e;
+  color:#FFFFFF;
+  float: left;
+  width: 20%;
+  padding: 15px;
+  margin-top: 7px;
+  text-align: center;
+}
+
+body {
+  background: #e5e5e5;
+ }
+ 
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
+  }
+}

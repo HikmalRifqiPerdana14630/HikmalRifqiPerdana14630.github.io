@@ -3,54 +3,7 @@
 <head>
   <title>Informasi</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-  * {
-  box-sizing: border-box;
-}
-
-
-.menu {
-  text-decoration: none;
-  float: left;
-  width: 20%;
-  text-align: center;
-}
-
-.menu a {
-  text-decoration: none;
-  background-color: #ffd036;
-  padding: 8px;
-  margin-top: 7px;
-  display: block;
-  width: 100%;
-  color: black;
-}
-
-.main {
-  text-decoration: none;
-  float: left;
-  width: 60%;
-  padding: 0 20px;
-}
-
-.right {
-  text-decoration: none;
-  background-color: #A9A9A9;
-  color:#FFFFFF;
-  float: left;
-  width: 20%;
-  padding: 15px;
-  margin-top: 7px;
-  text-align: center;
-}
-
-@media only screen and (max-width: 620px) {
-  /* For mobile phones: */
-  .menu, .main, .right {
-    width: 100%;
-  }
-}
-</style>
+<link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/x-icon" href="Keqing.jpg">
 </head>
 <body style="font-family:Verdana;">
@@ -156,7 +109,74 @@
   </div>
 </div>
 
-<div style="background-color:#A9A9A9;text-align:center;padding:10px;margin-top:7px;">Dasar Komputasi</div>
+<div style="background-color:#B22222;text-align:center;padding:10px;margin-top:7px;">
+  <div id = "MyClockDisplay" class = "clock" onload = "showTime()"> </div>  
+  <script>  
+  function showTime(){  
+      var date = new Date();  
+      var h = date.getHours();  
+      var m = date.getMinutes();  
+      var s = date.getSeconds();  
+      var session = "AM";  
+      if(h == 0) {  
+          h = 12;  
+      }  
+      if(h > 12) {  
+          hh = h - 12;  
+          session = "PM";  
+      }  
+      h = (h < 10) ? "0" + h : h;  
+      m = (m < 10) ? "0" + m : m;  
+      s = (s < 10) ? "0" + s : s;  
+      var time = h + ":" + m + ":" + s + " " + session;  
+      document.getElementById("MyClockDisplay").innerText = time;  
+      document.getElementById("MyClockDisplay").textContent = time;  
+      setTimeout(showTime, 1000);  
+  }  
+  showTime();  
+  </script>
+  <div id="tampil"></div>
+ 
+  <script>
+      var date = new Date();
+      var tahun = date.getFullYear();
+      var bulan = date.getMonth();
+      var tanggal = date.getDate();
+      var hari = date.getDay();
+      var jam = date.getHours();
+      var menit = date.getMinutes();
+      var detik = date.getSeconds();
+      switch(hari) {
+      case 0: hari = "Minggu"; break;
+      case 1: hari = "Senin"; break;
+      case 2: hari = "Selasa"; break;
+      case 3: hari = "Rabu"; break;
+      case 4: hari = "Kamis"; break;
+      case 5: hari = "Jum'at"; break;
+      case 6: hari = "Sabtu"; break;
+      }
+      switch(bulan) {
+      case 0: bulan = "Januari"; break;
+      case 1: bulan = "Februari"; break;
+      case 2: bulan = "Maret"; break;
+      case 3: bulan = "April"; break;
+      case 4: bulan = "Mei"; break;
+      case 5: bulan = "Juni"; break;
+      case 6: bulan = "Juli"; break;
+      case 7: bulan = "Agustus"; break;
+      case 8: bulan = "September"; break;
+      case 9: bulan = "Oktober"; break;
+      case 10: bulan = "November"; break;
+      case 11: bulan = "Desember"; break;
+      }
+      var tampilTanggal = hari + ", " + tanggal + " " + bulan + " " + tahun;
+
+      document.getElementById("tampil").innerHTML = tampilTanggal;
+  </script>
+  <audio autoplay loop>
+    <source src="Carefree.mp3" type="audio/mp3">
+  </audio>
+</div>
 
 </body>
 </html>
